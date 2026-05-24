@@ -1853,7 +1853,7 @@ function doPost(e) {
   return ContentService.createTextOutput(JSON.stringify({status:'ok'})).setMimeType(ContentService.MimeType.JSON);
 }
 */
-const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE'; // <-- Paste your deployed Web App URL here
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwDQewHTQxR_aPVrA0bcsDeY5NLZnDMZWkXSVuL8NRsJtX3xFTwFkFOEzlVyPAT8uUi/exec'; // <-- Paste your deployed Web App URL here
 
 async function sendToSheets(sheetName, headers, row) {
   if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
