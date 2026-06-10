@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Rich living-forest green theme */
+  --background: 138 45% 7%;
+  --foreground: 100 20% 94%;
+
+  --card: 140 40% 10%;
+  --card-foreground: 100 20% 94%;
+  --card-border: 140 35% 18%;
+
+  --popover: 138 45% 7%;
+  --popover-foreground: 100 20% 94%;
+  --popover-border: 140 35% 18%;
+
+  /* Vibrant forest green */
+  --primary: 141 71% 33%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 140 35% 16%;
+  --secondary-foreground: 100 20% 90%;
+
+  --muted: 140 30% 18%;
+  --muted-foreground: 130 20% 62%;
+
+  /* Warm golden-leaf amber */
+  --accent: 88 55% 48%;
+  --accent-foreground: 138 45% 7%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 140 30% 20%;
+  --input: 140 30% 18%;
+  --ring: 141 71% 33%;
+
+  --radius: 0.625rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Nature-inspired scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: hsl(138 45% 7%); }
+::-webkit-scrollbar-thumb {
+  background: hsl(141 71% 33% / 0.5);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: hsl(88 55% 48% / 0.7); }
+
+/* Section dividers — organic wave shapes */
+.wave-top {
+  clip-path: ellipse(100% 60% at 50% 100%);
+}
+.wave-bottom {
+  clip-path: ellipse(100% 60% at 50% 0%);
+}
+
+/* Text gradient utility */
+.text-gradient {
+  background: linear-gradient(135deg, #52b788 0%, #95d5b2 40%, #d8f3dc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #b5e550 0%, #d9f99d 50%, #fef08a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Leaf shimmer animation */
+@keyframes leafShimmer {
+  0%, 100% { opacity: 0.6; transform: rotate(-3deg) scale(1); }
+  50% { opacity: 1; transform: rotate(3deg) scale(1.05); }
+}
+
+/* Floating particles */
+@keyframes drift {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.7; }
+  100% { transform: translateY(-100vh) translateX(30px) rotate(720deg); opacity: 0; }
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(82, 183, 136, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(82, 183, 136, 0.5), 0 0 80px rgba(82, 183, 136, 0.15); }
+}
+
+.glow-green { animation: pulseGlow 3s ease-in-out infinite; }
